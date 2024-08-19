@@ -9,7 +9,7 @@ public class User implements IUser {
 
     @Override
     public void notificar(Noticia noticia) {
-        System.out.println("Usuário " + nome + " recebeu a notócia " + noticia.getTitulo());
+        System.out.println("Usuário " + nome + " recebeu a notícia " + noticia.getTitulo());
     }
     
 }

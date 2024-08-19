@@ -1,5 +1,8 @@
 package observer.proj2;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Proj2 {
     /*
      * Exercício: Sistema de Notificações de Notícias
@@ -45,6 +48,23 @@ public class Proj2 {
      * O objetivo deste exercício é praticar o uso do padrão Observer, permitindo que você compreenda como diferentes objetos podem ser notificados de forma independente em resposta a eventos específicos.
     */
     public static void main(String[] args) {
+        User tiago = new User("Tiago");
+        User beatriz = new User("Beatriz");
+
+        Categoria esportes = new Categoria(new ArrayList<>(), new ArrayList<>());
+        Categoria tecnologia = new Categoria(new ArrayList<>(), new ArrayList<>());
+        Noticia noticia = new Noticia("Bronze no skate feminino", "Raissa recebeu medalha de bronze nas olimpíadas 2024");
+        Noticia noticia2 = new Noticia("teste", "teste");
         
+        SistemaNotificacoes sistemaNotificacoes = new SistemaNotificacoes(new HashMap<>());
+        sistemaNotificacoes.adicionarCategoria("Esportes", esportes);
+        sistemaNotificacoes.adicionarCategoria("Tecnologia", tecnologia);
+
+        sistemaNotificacoes.adicionarUsuario("Tecnologia", beatriz);
+        sistemaNotificacoes.adicionarUsuario("Tecnologia", tiago);
+        sistemaNotificacoes.adicionarUsuario("Esportes", tiago);
+
+        sistemaNotificacoes.publicarNoticia("Esportes", noticia);
+        sistemaNotificacoes.publicarNoticia("Tecnologia", noticia2);
     }
 }
