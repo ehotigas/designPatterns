@@ -1,8 +1,10 @@
 package template.proj3;
 
+import java.io.IOException;
+
 public interface IFile {
-    void read();
-    void write();
+    String read() throws IOException;
+    void write() throws IOException;
     String getPath();
-    
+    String getContent();
 }
